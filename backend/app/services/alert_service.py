@@ -29,7 +29,7 @@ from app.repositories.product_repository import sellable_batch_condition
 from app.schemas.alert import AlertCountOut, AlertEvaluationResult, AlertOut
 from app.schemas.common import Page
 
-logger = logging.getLogger("lotepos.alerts")
+logger = logging.getLogger("fan_pos.alerts")
 
 AlertKey = tuple[str, uuid.UUID, uuid.UUID]  # (alert_type, branch_id, reference_id)
 _EVALUATED = [t.value for t in EVALUATED_ALERT_TYPES]
@@ -48,7 +48,7 @@ class AlertService:
     async def evaluate(self, branch_id: uuid.UUID | None = None) -> AlertEvaluationResult:
         """Evalúa todas las condiciones y sincroniza ``system_alerts`` en una transacción."""
         acquired = await self.session.scalar(
-            text("SELECT GET_LOCK('lotepos_alerts_evaluator', 0)")
+            text("SELECT GET_LOCK('fan_pos_alerts_evaluator', 0)")
         )
         if not acquired or acquired == 0:
             await self.session.rollback()

@@ -1,13 +1,13 @@
 -- ========================================================
--- SCRIPT DE INICIALIZACIÓN DE BASE DE DATOS: LotePOS
+-- SCRIPT DE INICIALIZACIÓN DE BASE DE DATOS: fan_pos
 -- Motor: MySQL 8.0+ / MariaDB 10.4+ (Compatible con XAMPP)
 -- ========================================================
 
-CREATE DATABASE IF NOT EXISTS `lotepos` 
+CREATE DATABASE IF NOT EXISTS `fan_pos_db` 
   CHARACTER SET utf8mb4 
   COLLATE utf8mb4_unicode_ci;
 
-USE `lotepos`;
+USE `fan_pos_db`;
 
 SET FOREIGN_KEY_CHECKS = 0;
 
@@ -181,7 +181,7 @@ INSERT INTO `branches` (`id`, `name`, `address`) VALUES
 
 -- 2. Usuarios del POS (admin / admin123 y cajero1 / cajero123)
 INSERT INTO `users` (`id`, `username`, `full_name`, `password_hash`, `role`, `branch_id`, `is_active`) VALUES
-('u0000000-0000-0000-0000-000000000001', 'admin', 'Administrador LotePOS', 'admin123', 'ADMIN', 'b0000000-0000-0000-0000-000000000001', 1),
+('u0000000-0000-0000-0000-000000000001', 'admin', 'Administrador fan_pos', 'admin123', 'ADMIN', 'b0000000-0000-0000-0000-000000000001', 1),
 ('u0000000-0000-0000-0000-000000000002', 'cajero1', 'Carlos Cajero', 'cajero123', 'CASHIER', 'b0000000-0000-0000-0000-000000000001', 1);
 
 -- 3. Productos del Catálogo

@@ -3,9 +3,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Branch, TokenResponse, User } from '../types';
 
 const STORAGE_KEYS = {
-  TOKEN: 'lotepos_token',
-  USER: 'lotepos_user',
-  BRANCH: 'lotepos_selected_branch',
+  TOKEN: 'fan_pos_token',
+  USER: 'fan_pos_user',
+  BRANCH: 'fan_pos_selected_branch',
 };
 
 interface AuthState {

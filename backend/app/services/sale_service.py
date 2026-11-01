@@ -32,7 +32,7 @@ from app.schemas.sale import (
 from app.services.payment_service import settle_payments
 from app.services.permissions import ensure_branch_access
 
-logger = logging.getLogger("lotepos.sales")
+logger = logging.getLogger("fan_pos.sales")
 
 
 def compute_tax_breakdown(total: Decimal) -> tuple[Decimal, Decimal, Decimal]:

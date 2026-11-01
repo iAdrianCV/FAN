@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "LotePOS",
-    "slug": "lotepos-mobile",
+    "name": "fan_pos",
+    "slug": "fan_pos",
     "version": "1.0.0",
     "orientation": "default",
     "icon": "./assets/icon.png",

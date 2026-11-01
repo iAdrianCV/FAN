@@ -82,7 +82,7 @@ export const LoginScreen: React.FC = () => {
           <View style={styles.logoBadge}>
             <Ionicons name="cart" size={40} color="#38bdf8" />
           </View>
-          <Text style={styles.appName}>LotePOS</Text>
+          <Text style={styles.appName}>fan_pos</Text>
           <Text style={styles.appTagline}>
             Punto de Venta y Control de Stock con Trazabilidad FEFO
           </Text>
@@ -196,7 +196,7 @@ export const LoginScreen: React.FC = () => {
 
         {/* Footer */}
         <Text style={styles.footerNote}>
-          LotePOS v1.0.0 • Bloqueo pesimista FEFO y transacciones ACID
+          fan_pos v1.0.0 • Bloqueo pesimista FEFO y transacciones ACID
         </Text>
       </ScrollView>
     </KeyboardAvoidingView>

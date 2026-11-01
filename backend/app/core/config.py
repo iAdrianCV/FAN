@@ -24,7 +24,7 @@ class Settings(BaseSettings):
     )
 
     # --- Aplicación ---
-    PROJECT_NAME: str = "LotePOS API"
+    PROJECT_NAME: str = "fan_pos API"
     VERSION: str = "1.0.0"
     API_V1_PREFIX: str = "/api/v1"
     ENVIRONMENT: Literal["development", "staging", "production"] = "development"
@@ -32,7 +32,7 @@ class Settings(BaseSettings):
     TIMEZONE: str = "America/Lima"
 
     # --- Base de datos ---
-    DATABASE_URL: str = "mysql+aiomysql://root:@localhost:3306/lotepos?charset=utf8mb4"
+    DATABASE_URL: str = "mysql+aiomysql://root:@localhost:3306/fan_pos_db?charset=utf8mb4"
     DB_POOL_SIZE: int = Field(default=10, ge=1)
     DB_MAX_OVERFLOW: int = Field(default=20, ge=0)
     DB_POOL_TIMEOUT: int = Field(default=30, ge=1)

@@ -31,7 +31,7 @@ from app.schemas.common import Page
 from app.schemas.product import ProductOut
 from app.services.permissions import ensure_branch_access
 
-logger = logging.getLogger("lotepos.inventory")
+logger = logging.getLogger("fan_pos.inventory")
 
 MAX_BATCH_SUFFIX = 999
 
@@ -91,7 +91,7 @@ class InventoryService:
         # Serializa altas concurrentes del mismo producto/sucursal (numeración de lote).
         await self.session.execute(
             text("SELECT GET_LOCK(:key, 10)"),
-            {"key": f"lotepos_batch_{product.id}_{payload.branch_id}"},
+            {"key": f"fan_pos_batch_{product.id}_{payload.branch_id}"},
         )
 
         # 2) Precios: explícitos o heredados del lote más reciente.

@@ -21,7 +21,7 @@ class SaleRepository:
     async def lock_receipt_series(self, series: str) -> None:
         """Serializa la numeración de una serie con un lock de base de datos."""
         await self.session.execute(
-            text("SELECT GET_LOCK(:key, 10)"), {"key": f"lotepos_receipt_{series}"}
+            text("SELECT GET_LOCK(:key, 10)"), {"key": f"fan_pos_receipt_{series}"}
         )
 
     async def next_receipt_number(self, series: str) -> int:

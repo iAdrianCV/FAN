@@ -28,10 +28,10 @@ from fastapi.responses import JSONResponse
 from sqlalchemy.exc import DBAPIError, IntegrityError
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
-logger = logging.getLogger("lotepos.errors")
+logger = logging.getLogger("fan_pos.errors")
 
 PROBLEM_MEDIA_TYPE = "application/problem+json"
-PROBLEM_BASE_URI = "https://lotepos.app/problems/"
+PROBLEM_BASE_URI = "https://fanpos.app/problems/"
 
 _HTTP_DEFAULT_CODES: dict[int, str] = {
     400: "BAD_REQUEST",

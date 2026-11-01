@@ -1,4 +1,4 @@
-# FAN - Sistema de Punto de Venta y Manejo de Stock y Lotes
+# fan_pos - Sistema de Punto de Venta y Manejo de Stock y Lotes
 
 [![FastAPI](https://img.shields.io/badge/Backend-FastAPI_0.115+-009688?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
@@ -6,9 +6,9 @@
 [![MySQL](https://img.shields.io/badge/Database-MySQL_8+_/_MariaDB-4479A1?style=flat&logo=mysql&logoColor=white)](https://www.mysql.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-**FAN** es un sistema moderno, ultraligero y de alto rendimiento de **Punto de Venta (POS)** y control de inventarios diseñado para operar de forma fluida en múltiples interfaces: **Móvil (Android/iOS), Tablets, Web y Escritorio**. 
+**fan_pos** es un sistema moderno, ultraligero y de alto rendimiento de **Punto de Venta (POS)** y control de inventarios diseñado para operar de forma fluida en múltiples interfaces: **Móvil (Android/iOS), Tablets, Web y Escritorio**. 
 
-Su arquitectura desacoplada combina la velocidad asíncrona de **FastAPI** en Python con la ligereza y confiabilidad de **MySQL**, asegurando transacciones atómicas con bloqueo pesimista y cumplimiento estricto de rotación de mercadería **FEFO (First Expired, First Out)**.
+Su arquitectura desacoplada combina la velocidad asíncrona de **FastAPI** en Python con la ligereza y confiabilidad de **MySQL** (base de datos: `fan_pos_db`), asegurando transacciones atómicas con bloqueo pesimista y cumplimiento estricto de rotación de mercadería **FEFO (First Expired, First Out)**.
 
 ---
 
@@ -60,7 +60,7 @@ Módulo diseñado para la conciliación de turnos y analítica comercial:
 ## 📂 Estructura del Repositorio
 
 ```
-FAN/
+fan_pos/
 ├── backend/                  # API REST en Python / FastAPI
 │   ├── app/
 │   │   ├── api/              # Endpoints v1 (auth, products, batches, sales, alerts, reports)
@@ -71,7 +71,7 @@ FAN/
 │   │   ├── schemas/          # Schemas Pydantic v2 (validación estricta in/out)
 │   │   ├── services/         # Lógica FEFO, arqueo de caja y motor de alertas
 │   │   └── main.py           # Instancia FastAPI y ciclo de vida (lifespan)
-│   ├── database_mysql.sql    # Script DDL + datos semilla para MySQL / XAMPP
+│   ├── database_mysql.sql    # Script DDL + datos semilla para MySQL / XAMPP (fan_pos_db)
 │   ├── requirements.txt      # Dependencias de Python
 │   └── .env.example          # Plantilla de variables de entorno
 │
@@ -94,7 +94,7 @@ FAN/
 
 ### 1. Base de Datos (MySQL)
 1. Inicia **MySQL** en tu servidor local (ej. XAMPP en el puerto `3306`).
-2. Importa el archivo `backend/database_mysql.sql` en MySQL Workbench o phpMyAdmin. Se creará la base de datos `lotepos` con productos y lotes de prueba.
+2. Importa el archivo `backend/database_mysql.sql` en MySQL Workbench o phpMyAdmin. Se creará automáticamente la base de datos `fan_pos_db` con productos y lotes de prueba.
 
 ### 2. Backend (FastAPI)
 ```bash

@@ -10,7 +10,7 @@ from app.repositories.user_repository import UserRepository
 from app.schemas.auth import TokenResponse, UserOut
 
 # Hash bcrypt real (generado al importar) para igualar el tiempo de respuesta con usuarios inexistentes.
-_DUMMY_HASH: str = hash_password("lotepos-timing-equalizer")
+_DUMMY_HASH: str = hash_password("fan_pos-timing-equalizer")
 
 
 class AuthService:
