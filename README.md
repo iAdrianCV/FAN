@@ -1,4 +1,4 @@
-# FAN - Sistema de Punto de Venta (POS) & Trazabilidad por Lotes FEFO
+# FAN - Sistema de Punto de Venta y Manejo de Stock y Lotes
 
 [![FastAPI](https://img.shields.io/badge/Backend-FastAPI_0.115+-009688?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
@@ -27,7 +27,7 @@ Su arquitectura desacoplada combina la velocidad asíncrona de **FastAPI** en Py
 - **Escaneo Inteligente:** Soporte para cámara integrada (`expo-camera`) y lectores de código de barra físicos USB/Bluetooth (EAN-13, QR, Code128, UPC).
 - **Buscador con Debounce:** Filtrado instantáneo por nombre, SKU o código de barra con retraso controlado de 300 ms.
 - **Carrito Táctil con Límite de Stock:** Impide visual y lógicamente agregar más existencias de las disponibles en la sucursal.
-- **Cobro Multi-Método (Split Payments):** Soporta pagos combinados en una sola venta (Efectivo, Yape, Plin, Tarjeta / POS, Transferencia) con cálculo automático de vuelto en tiempo real.
+- **Cobro Rápido:** Registro ágil de ventas en efectivo con cálculo automático y en tiempo real del vuelto a entregar.
 
 ### 2. 📦 Módulo de Inventario & Control de Lotes
 - **Alta Rápida de Stock:** Creación al vuelo de nuevos productos y asignación automática de número de lote `LOT-{YYYYMMDD}-{código}`.
@@ -43,11 +43,12 @@ Su arquitectura desacoplada combina la velocidad asíncrona de **FastAPI** en Py
 - **Acción Inmediata:** Botón de un toque para dar de baja por merma directamente desde la tarjeta de alerta.
 
 ### 4. 📊 Módulo de Informes y Cierre de Caja `[BETA]`
-> ⚠️ **Estado:** En fase de pruebas activas.
-- **Arqueo de Efectivo:** Estimación del efectivo neto esperado en caja (descontando vueltos entregados).
-- **Margen de Ganancia Bruto:** Cálculo de rentabilidad real: $\sum (\text{precio\_venta} - \text{costo\_real\_lote}) \times \text{cantidad}$.
-- **Desglose de Ingresos:** Comparativa de transacciones recaudadas por cada método de pago.
-- **Trazabilidad de Comprobantes:** Relación de boletas y facturas con anulación transaccional (reversión de inventario a los lotes de origen).
+> ⚠️ **Estado:** Módulo conceptual en fase beta y desarrollo activo.
+
+Módulo diseñado para la conciliación de turnos y analítica comercial:
+- **Arqueo y Cierre de Caja:** Estimación del efectivo neto esperado al cierre del turno según las ventas registradas.
+- **Métricas de Rentabilidad:** Análisis de ingresos brutos y costo de la mercadería vendida.
+- **Historial de Comprobantes:** Consulta y auditoría de comprobantes emitidos con posibilidad de anulación transaccional (reversión de inventario a los lotes de origen).
 
 ### 5. 🔐 Autenticación y Seguridad
 - Sesiones seguras mediante **JWT (Bearer token)** con algoritmo HS256.
