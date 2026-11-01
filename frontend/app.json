@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "LotePOS",
+    "slug": "lotepos-mobile",
+    "version": "1.0.0",
+    "orientation": "default",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#0f172a"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0f172a"
+      },
+      "permissions": ["CAMERA"]
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Permite a LotePOS usar la cámara para escanear códigos de barras de productos y lotes."
+        }
+      ]
+    ]
+  }
+}
+

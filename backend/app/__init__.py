@@ -1,0 +1,2 @@
+"""LotePOS backend package."""
+
